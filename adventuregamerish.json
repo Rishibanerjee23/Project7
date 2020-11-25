@@ -1,0 +1,197 @@
+{
+  "__metadata__": {
+    "title": "The forgetful farmer who doesnt know where the keys to Pig pen are",
+    "start": "Pig_pen"
+  },
+  "Pig_pen": {
+    "name": "Pig_pen",
+    "description": "Awe shucks. The Pigs need feeding. Where are the keys? ",
+    "exits": [
+      {
+        "destination": "chicken_coop",
+        "description": "Search in the chicken coop."
+      },
+      {
+        "destination": "outside_house",
+        "description": "Head towards the house "
+      },
+      {
+        "destination": "outside_car",
+        "description": "Head towards the car"
+      },
+      {
+        "destination": "unlock_pig_pen",
+        "description": "Unlock the pig pen",
+        "required_key": "pig pen key"
+      }
+    ],
+    "items": [
+      "phone"
+    ]
+  },
+  "chicken_coop": {
+    "name": "chicken_coop",
+    "description": "You are in the chicken coop. Where are the keys ?",
+    "exits": [
+      {
+        "destination": "Pig_pen",
+        "description": "Go back to the pig pen."
+      },
+      {
+        "destination": "shed",
+        "description": "Maybe I left them in the shed?"
+      }
+    ],
+    "items": []
+  },
+  "shed": {
+    "name": "shed",
+    "description": "You are in the shed.... There is lots of stuff in here.",
+    "exits": [
+      {
+        "destination": "chicken_coop",
+        "description": "Go back to the chicken coop"
+      },
+      {
+        "destination": "outside_house",
+        "description": "Go the house"
+      }
+    ],
+    "items": [
+      "crowbar",
+      "shovel",
+      "rake"
+    ]
+  },
+  "outside_house": {
+    "name": "outside_house",
+    "description": "The door is locked and can't get in. Find some tools to break into the house.",
+    "exits": [
+      {
+        "destination": "shed",
+        "description": "Go back to the shed"
+      },
+      {
+        "destination": "house",
+        "description": "Enter House",
+        "required_key": "crowbar"
+      }
+    ],
+    "items": []
+  },
+  "house": {
+    "name": "house",
+    "description": "You are now inside your house and it is the only place with cellular service . The pig pen keys aren't here.",
+    "exits": [
+      {
+        "destination": "outside_car",
+        "description": "go check your car",
+        "required_key": "car keys"
+      },
+      {
+        "destination": "Call_jim",
+        "description": "Call your buddy Jim to help you out",
+        "required_key": "phone"
+      },
+      {
+        "destination": "Pig_pen",
+        "description": "Go Back to the pig pen"
+      }
+    ],
+    "items": [
+      "car keys"
+    ]
+  },
+  "Call_jim": {
+    "name": "Call_jim",
+    "description": "Jim has comeover and helped you out.....Still need to find your keys!",
+    "exits": [],
+    "items": [],
+    "ends_game": true
+  },
+  "outside_car": {
+    "name": "outside_car",
+    "description": "You are outside your car. You think you might've left the pig pen keys in here.",
+    "exits": [
+      {
+        "destination": "inside_car",
+        "description": "Enter the car",
+        "required_key": "car keys"
+      },
+      {
+        "destination": "house",
+        "description": "Go back inside the house."
+      }
+    ],
+    "items": []
+  },
+  "inside_car": {
+    "name": "inside_car",
+    "description": "You are inside your car. You have a feeling that that they are in here",
+    "exits": [
+      {
+        "destination": "glovebox",
+        "description": "Search the glovebox"
+      },
+      {
+        "destination": "floor",
+        "description": "check the floor"
+      },
+      {
+        "destination": "dashboard",
+        "description": "Check the dashboard"
+      }
+    ],
+    "items": []
+  },
+  "glovebox": {
+    "name": "glovebox",
+    "description": "Nothing in glovebox",
+    "exits": [
+      {
+        "destination": "floor",
+        "description": "Search the floor"
+      },
+      {
+        "destination": "dashboard",
+        "description": "Search the dashboard"
+      }
+    ],
+    "items": []
+  },
+  "floor": {
+    "name": "floor",
+    "description": "Look's like the keys are not on the floor, Check somewhere else.",
+    "exits": [
+      {
+        "destination": "dashboard",
+        "description": "Check the dashboard"
+      },
+      {
+        "destination": "glovebox",
+        "description": "Check the glovebox."
+      }
+    ],
+    "items": []
+  },
+  "dashboard": {
+    "name": "dashboard",
+    "description": "You have found the keys!Make sure to take them to the pig pen",
+    "exits": [
+      {
+        "destination": "Pig_pen",
+        "description": "go back to the pig pen"
+      }
+    ],
+    "items": [
+      "pig pen key"
+    ]
+  },
+  "unlock_pig_pen": {
+    "name": "unlock_pig_pen",
+    "description": "You unlock the pig pen and feed your pigs.\n",
+    "exits": [],
+    "items": [],
+    "ends_game": true
+  }
+}
